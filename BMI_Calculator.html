@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BMI Calculator</title>
+	<link rel="icon" href="icon.png">
+
+<style>
+body{
+background-image:url('bmi.jpg');
+background-size:cover;
+}
+
+*{
+font-weight:bold;
+text-align:center;
+}
+
+h1{
+color:#008080;
+font-family:cursive;
+}
+
+#container{
+margin:50px auto;
+background-color:#ffc34d;
+max-width:300px;
+height:400px;
+padding:50px;
+border-radius:20px;
+}
+
+button{
+background-color:#008080;
+color: #d9d9d9;
+padding:15px 20px;
+border-radius:7px;
+}
+
+#res{
+border:2px solid #008080;
+height:22px;
+border-radius:7px;
+color:#4d004d;
+}
+</style>
+</head>
+
+<body>
+	<div id="container">
+	<h1> BMI Calculator </h1>
+	Enter weight (kg) : <input type="number" id="weight"><br><br>
+	Enter height (m)  :  <input type="number" id="height"><br><br><br>
+	<button onclick="Calculate()"> Calculate BMI </button>
+
+	<p id="result"></p><br>
+	<p id="res"></p>
+	</div>
+<script>
+	function Calculate()
+	{
+		var weight = parseFloat(document.getElementById('weight').value);
+		var height = parseFloat(document.getElementById('height').value);
+		var BMI = weight/(height*height);
+		document.getElementById('result').innerHTML = "BMI is " + BMI;
+	
+
+	if(BMI<18.5)
+	{
+		document.getElementById('res').innerHTML = "You are Underweight";
+	}
+	else if(BMI>25.0)
+	{
+		document.getElementById('res').innerHTML = "You are Overweight";
+	}
+	else
+	{
+		document.getElementById('res').innerHTML = "You have healthy weight range";
+	}
+
+	}
+</script>
+</body>
+</html>

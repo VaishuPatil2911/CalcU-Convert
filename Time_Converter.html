@@ -1,0 +1,91 @@
+<html>
+<head>
+	<title>Time Converter</title>
+	<link rel="icon" href="icon.png">
+
+<style>
+body{
+background-image:url('time.jpg');
+background-size:cover;
+}
+
+h1{
+color:purple;
+}
+
+*{
+text-align:center;
+font-weight:bold;
+font-family:cursive;
+}
+
+#container{
+margin:50px auto;
+width:500px;
+background-color:#ecd9c6;
+padding:50px;
+border-radius:20px;
+}
+
+#conversiontype{
+padding:10px 20px;
+border-radius:7px;
+font-size:15px;
+}
+
+#data,button{
+padding:10px 20px;
+border-radius:7px;
+}
+
+button{
+background-color:pink;
+}
+
+#ans{
+font-size:30px;
+}
+</style>
+</head>
+
+<body>
+	<div id='container'>
+	<h1> Time Converter </h1>
+
+	Choose : <select id="conversiontype">
+		<option value="hrtomin">Hour To Minute</option>
+		<option value="mintohr">Minute To Hour</option>
+		<option value = "mintosec">Minute To Seconds</option>
+	</select><br><br>
+
+	Enter Time : <input type="number" id="data" min="0"><br><br>
+	<button type="submit" onclick="convert()" autofocus>Convert</button>
+
+	<p id="ans"></p>
+	</div>
+<script>
+	function convert()
+	{
+		var num = parseFloat(document.getElementById('data').value);
+		var conversion = document.getElementById('conversiontype').value;
+
+	if(conversion == "hrtomin")
+	{
+		var ans = num*60;
+		document.getElementById('ans').innerHTML = ans + " minutes";
+	}
+
+	else if(conversion == "mintohr")
+	{
+		var ans = num/60;
+		document.getElementById('ans').innerHTML =ans.toFixed(2) + " hours";
+	}	
+	else
+	{
+		var ans = num*60;
+		document.getElementById('ans').innerHTML = ans + " seconds";
+	}
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<html>
+<head>
+	<title>CGPA Converter</title>
+	<link rel="icon" href="icon.png">
+
+<style>
+body{
+background-image:url('cgpa.jpg');
+background-size:cover;
+}
+
+h1{
+color:red;
+font-size:40px;
+font-family:cursive;
+}
+
+*{
+text-align:center;
+font-weight:bold;
+font-size:20px;
+}
+
+#container{
+background-color:#8bd1da;
+margin:50px auto;
+padding:10px;
+max-width:600px;
+height:350px;
+border-radius:20px;
+}
+
+button{
+background-color: #E6E6FA;
+padding:8px 15px;
+border-radius:7px;
+}
+
+#data{
+border-radius:7px;
+padding:7px 15px;
+}
+
+#ans{
+font-size:25px;
+}
+</style>
+</head>
+
+<body>
+	<div id="container">
+	<h1>CGPA Converter</h1>
+	Choose : <select id="data">
+	<option value="pertocgpa">Percentage to CGPA</option>
+	<option value="cgpatoper">CGPA to percentage</option>
+	</select><br><br>
+
+	Enter Marks : <input type="number" id="num"><br><br>
+
+	<button type="submit" onclick="convert()">Convert</button>
+	<p id="ans"></p>
+	</div>
+<script>
+	function convert()
+	{
+		var num = document.getElementById('num').value;
+		var data = document.getElementById('data').value;
+
+		if (data=="pertocgpa")
+		{
+			if(num<=100)
+			{
+			var cgpa = num/9.5;
+			document.getElementById('ans').innerHTML = cgpa.toFixed(2) + " CGPA";
+			}
+			else
+			{
+			document.getElementById('ans').innerHTML = "Enter proper Percentage(<100)";
+			}
+		}
+
+		else if(data=="cgpatoper")
+		{
+			if(num<=10)
+			{
+			var percent = num*9.5;
+			document.getElementById('ans').innerHTML = percent.toFixed(2) + "%";
+			}
+			else
+			{
+			document.getElementById('ans').innerHTML = "Enter Proper CGPA (<10)";
+			}
+		}
+	}
+	
+</script>
+</body>
+</html>

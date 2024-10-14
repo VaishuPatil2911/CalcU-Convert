@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simple Calculator</title>
+	<link rel="icon" href="icon.png">
+
+<style>
+body{
+background-image:url('cal.jpg');
+background-size:cover;
+}
+
+*{
+font-weight:bold;
+font-size:20px;
+text-align:center;
+}
+
+h1{
+color:purple;
+font-size:30px;
+font-family:cursive;
+}
+
+button{
+padding:15px 10px;
+font-weight:bold;
+background-color:powderblue;
+color:purple;
+border-radius:7px;
+margin:15px;
+font-size:15px;
+}
+
+#container{
+margin:50px auto;
+max-width:600px;
+background-color:pink;
+padding:30px;
+border-radius:20px;
+}
+
+#result{
+font-size:25px;
+}
+</style>
+</head>
+
+<body>
+	<div id = 'container'>
+	<h1>Arithmetic Calculator</h1><br>
+	
+	Enter First Number : <input type="number" id="firstnum" autofocus><br><br>
+	Enter Second Number : <input type ="number" id="secondnum"><br><br>
+
+	<button onclick="Addition()"> Addition </button>
+	<button onclick="Substraction()"> Substraction </button>
+	<button onclick="Multiplication()"> Multiplication </button>
+	<button onclick="Division()"> Division </button>
+	
+  	<p id="result"></p>
+	</div>
+
+<script>
+	function Addition()
+	{
+		var num1 = parseFloat(document.getElementById('firstnum').value);
+		var num2 = parseFloat(document.getElementById('secondnum').value);
+		var sum = num1 + num2;
+		document.getElementById('result').innerHTML = num1 + " + " + num2 + " is " + sum;
+	}
+
+	function Substraction()
+	{
+		var num1 = parseFloat(document.getElementById('firstnum').value);
+		var num2 = parseFloat(document.getElementById('secondnum').value);
+		var rem = num1-num2;
+		document.getElementById('result').innerHTML = num1 + " - " + num2 + " is " + rem;
+	}
+
+	function Multiplication()
+	{
+		var num1 = parseFloat(document.getElementById('firstnum').value);
+		var num2 = parseFloat(document.getElementById('secondnum').value);
+		var ans = num1*num2;
+		document.getElementById('result').innerHTML = num1 + " * " + num2 + " is " + ans;
+	}	
+
+	function Division()
+	{
+		var num1 = parseFloat(document.getElementById('firstnum').value);
+		var num2 = parseFloat(document.getElementById('secondnum').value);
+		var quo = num1/num2;
+		document.getElementById('result').innerHTML = num1 + " / " + num2 + " is " + quo;
+	}
+	
+</script>
+
+</body>
+</html>

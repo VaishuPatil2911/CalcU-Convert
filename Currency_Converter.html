@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Currency Converter</title>
+	<link rel="icon" href="icon.png">
+
+<style>
+body{
+background-image:url('currency.jpg');
+background-size:cover;
+}
+
+*{
+font-size:20px;
+text-align:center;
+font-weight:bold;
+font-family:cambria;
+}
+
+h1{
+font-size:35px;
+color:grey;
+font-family:cursive;
+}
+
+
+input[type="text"]{
+padding:8px 20px;
+font-size:20px;
+}
+
+.container{
+background-color:#b3ffe0;
+max-width:400px;
+height:400px;
+margin:50px auto;
+padding:50px;
+border-radius:20px;
+}
+
+button{
+font-size:18px;
+padding:10px 18px;
+border-radius:7px;
+background-color:#ecd9c6;
+}
+
+#ans{
+background-color:pink;
+font-size:20px;
+color:red;
+}
+</style>
+</head>
+
+<body>
+	<div class="container">
+	<h1> Currency Converter </h1><br>
+	Enter amount ($) : <br><input type="text" id="amt" autofocus><br><br>
+	<button onclick="converter()">Convert</button><br><br><br><br>
+
+	<div id="ans">
+	<p></p>
+	</div>
+	</div>
+<script>
+	function converter()
+	{
+		var amount = document.getElementById('amt').value;
+		var rupee = amount*83.39;
+
+		document.getElementById('ans').innerHTML = rupee + " \u20B9";
+	}
+
+</script>
+</body>
+</html>
